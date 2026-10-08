@@ -31,9 +31,36 @@ namespace InventoryMaintenance
             IEnumerable<InventoryItem> filteredItems = null!;
 
             // add items to the filteredItems collection based on FilterBy value
+            if (filter == "All")
+            {
+                filteredItems = from item in items
+                                orderby item.Description
+                                select item;
+            }
+            else if (filter == "Under $10")
+            {
+                filteredItems = from item in items
+                                where item.Price < 10
+                                orderby item.Description
+                                select item;
+            }
+            else if (filter == "$10 to $50")
+            {
+                filteredItems = from item in items
+                                where item.Price >= 10 && item.Price <= 50
+                                orderby item.Description
+                                select item;
+            }
+            else if (filter == "Over $50")
+            {
+                filteredItems = from item in items
+                                where item.Price > 50
+                                orderby item.Description
+                                select item;
+            }
 
             // change code to loop the filteredItems collection
-            foreach (InventoryItem item in items)
+            foreach (InventoryItem item in filteredItems)
             {
                 lstItems.Items.Add(item.GetDisplayText());
             }
@@ -61,7 +88,10 @@ namespace InventoryMaintenance
             }
             else
             {
-                InventoryItem item = items[i];
+                // InventoryItem item = items[i];
+
+                string displayText = lstItems.Items[i].ToString()!;
+                InventoryItem item = items.Where(x => x.GetDisplayText() == displayText).FirstOrDefault()!;
 
                 string message = $"Are you sure you want to delete {item.Description}?";
                 DialogResult result =
