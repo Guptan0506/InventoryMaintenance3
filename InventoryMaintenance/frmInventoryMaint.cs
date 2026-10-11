@@ -6,7 +6,7 @@ namespace InventoryMaintenance
         {
             InitializeComponent();
         }
-
+        // Navya Gupta
         private List<InventoryItem> items = null!;
 
         private void frmInventoryMaint_Load(object sender, EventArgs e)
@@ -15,6 +15,7 @@ namespace InventoryMaintenance
             LoadComboBox();
             FillItemListBox();
         }
+        // Navya Gupta
 
         private void LoadComboBox()
         {
@@ -22,6 +23,8 @@ namespace InventoryMaintenance
                 "All", "Under $10", "$10 to $50", "Over $50"
             };
         }
+
+        // Navya Gupta
 
         private void FillItemListBox()
         {
@@ -66,6 +69,8 @@ namespace InventoryMaintenance
             }
         }
 
+        // Navya Gupta
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmNewItem newItemForm = new();
@@ -77,6 +82,8 @@ namespace InventoryMaintenance
                 FillItemListBox();
             }
         }
+
+        // Navya Gupta
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -111,6 +118,8 @@ namespace InventoryMaintenance
         {
             this.Close();
         }
+
+        // Navya Gupta
 
         private void cboFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {

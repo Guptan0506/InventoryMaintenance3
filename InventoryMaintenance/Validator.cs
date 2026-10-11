@@ -4,6 +4,8 @@ namespace InventoryMaintenance
     {
         public static string LineEnd { get; set; } = "\n";
 
+        // Navya Gupta
+
         public static string IsPresent(string value, string name)
         {
             string msg = "";
@@ -13,6 +15,8 @@ namespace InventoryMaintenance
             }
             return msg;
         }
+
+        // Navya Gupta
 
         public static string IsDecimal(string value, string name)
         {
@@ -24,6 +28,8 @@ namespace InventoryMaintenance
             return msg;
         }
 
+        // Navya Gupta
+
         public static string IsInt32(string value, string name)
         {
             string msg = "";
@@ -33,6 +39,7 @@ namespace InventoryMaintenance
             }
             return msg;
         }
+        // Navya Gupta
 
         public static string IsWithinRange(string value, string name, decimal min,
             decimal max)

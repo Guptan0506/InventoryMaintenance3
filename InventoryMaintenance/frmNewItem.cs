@@ -7,6 +7,8 @@
             InitializeComponent();
         }
 
+        // Navya Gupta
+
         private InventoryItem item = null!;
 
         public InventoryItem GetNewItem()
@@ -14,6 +16,8 @@
             this.ShowDialog();
             return item;
         }
+
+        // Navya Gupta
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -27,6 +31,8 @@
                 this.Close();
             }
         }
+
+        // Navya Gupta
 
         private bool IsValidData()
         {
@@ -46,6 +52,8 @@
             }
             return success;
         }
+
+        // Navya Gupta
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
